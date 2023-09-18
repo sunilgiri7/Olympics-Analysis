@@ -98,4 +98,4 @@ def sport_in_season(df):
     df['Medal'] = pd.to_numeric(df['Medal'], errors='coerce')
     df.drop_duplicates(subset = ['Sport', 'Event', "Medal"], inplace=True)
     grouped = df.groupby(['Season', 'Sport'])['Medal'].sum().reset_index()
-    return res2
+    return grouped
